@@ -11,7 +11,7 @@ public class Test {
 	
 	public static void main(String[] args) throws IOException, JAXBException {
 		
-		//´´½¨java¶ÔÏó  
+        //åˆ›å»ºjavaå¯¹è±¡  
         Hotel hotel=new Hotel();  
         hotel.setId(1);  
         hotel.setName("name1");  
@@ -31,13 +31,13 @@ public class Test {
         RoomTypeVOs.add(t2);  
         hotel.setRoomTypeVOs(RoomTypeVOs);  
   
-        //½«java¶ÔÏó×ª»»ÎªXML×Ö·û´®  
+        //å°†javaå¯¹è±¡è½¬æ¢ä¸ºXMLå­—ç¬¦ä¸²  
         JaxbUtil requestBinder = new JaxbUtil(Hotel.class,  
                 CollectionWrapper.class);  
         String retXml = requestBinder.toXml(hotel, "utf-8");  
         System.out.println("xml:"+retXml);  
           
-        //½«xml×Ö·û´®×ª»»Îªjava¶ÔÏó  
+        //å°†xmlå­—ç¬¦ä¸²è½¬æ¢ä¸ºjavaå¯¹è±¡  
         JaxbUtil resultBinder = new JaxbUtil(Hotel.class,  
                 CollectionWrapper.class);  
         Hotel hotelObj = resultBinder.fromXml(retXml);  
